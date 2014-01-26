@@ -1,0 +1,25 @@
+{ 
+	"name": "mimosa",
+	"version": "0.1",
+	"engines": [ "node >=0.4.0" ],
+	"description": "Cross platform application development toolkit.",
+	"author": "Bo HOU <daily.bhou@gmail.com> (http://imbhou.com)",
+	"contributors": [],
+	"keywords" : [ "mimosaSDK", "cross-platform", "shell" ],
+	
+	"repository": { 
+		"type" : "git", 
+		"url" : "https://github.com/bhou/mimosaSDK"
+	},
+  
+  "bin" : { 
+  	"mimosa" : "./bin/mimosa.js" 
+  },
+  
+  "scripts": { 
+  	"test" : "node test/test.js"
+	},
+	
+	"dependencies": {
+	}
+}
