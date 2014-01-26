@@ -7,20 +7,20 @@ var args = process.argv.slice(2);
 var help = [
 	"Mimosa SDK, version 0.1",
 	"",
-	"usage: mimisa create|build|run|debug|deploy [options]",
+	"usage: mimisa create|compile|run|debug|deploy [options]",
 	"",
 	"create			create a new mimosa project.", 
 	"			Example: 'mimosa create exampleProj'",
 	"",
-	"build			build the current project.",
-	"			Example: 'mimosa build iOS|android|pc'",
+	"compile			compile the current project.",
+	"			Example: 'mimosa compile'",
 	"",
 	"run			run the current project.",
 	"",
 	"debug			debug the current project.",
 	"",
 	"deploy			deploy the current project to target platform.",
-	"			Example: 'mimosa deploy iOS'",
+	"			Example: 'mimosa deploy iOS|android|desktop|sim'",
 	"",
 	"options:"
 ];
@@ -34,6 +34,7 @@ function printHelp() {
 
 if (args.length == 0) {
 	printHelp();
+	process.exit();
 }
 
 switch(args[0]) {

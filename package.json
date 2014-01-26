@@ -1,6 +1,6 @@
 { 
-	"name": "mimosa",
-	"version": "0.1",
+	"name": "mimosasdk",
+	"version": "0.0.1",
 	"engines": [ "node >=0.4.0" ],
 	"description": "Cross platform application development toolkit.",
 	"author": "Bo HOU <daily.bhou@gmail.com> (http://imbhou.com)",
