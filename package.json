@@ -17,7 +17,7 @@
   },
   
   "scripts": { 
-  	"test" : "vows test/*"
+  	"test" : "vows test/* --spec"
 	},
 	
 	"dependencies": {
