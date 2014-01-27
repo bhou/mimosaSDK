@@ -22,7 +22,8 @@ var help = [
 	"deploy			deploy the current project to target platform.",
 	"			Example: 'mimosa deploy iOS|android|desktop|sim'",
 	"",
-	"options:"
+	"options:",
+	"-o			override the project if existed"
 ];
 
 // print the help 
@@ -47,7 +48,9 @@ switch(args[0]) {
 			break;
 		}
 		
-		mimosa.create(args[0]);
+		var name = args[0];
+		args.shift();
+		mimosa.create(name, args);
 		break;
 	case "build":
 		break;
