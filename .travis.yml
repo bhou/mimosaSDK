@@ -1,6 +1,6 @@
 language: node_js
 
-before_script: cd mimosaSDK
+before_script: cd /home/travis/build/bhou/mimosaSDK
 
 node_js:
   - "0.10"
