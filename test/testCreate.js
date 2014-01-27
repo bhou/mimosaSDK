@@ -15,6 +15,11 @@ testSuite.addBatch({
 		},
 		
 		'test project existance': function(error, stdout, stderr) {
+			console.log('stdout:' + stdout);
+			console.log('stderr:' + stderr);
+			if (error !== null) {
+				console.log('exec error: ' + error);
+			}
 			var exist = fs.existsSync('./testMimosaSDKProj');
 			assert.isTrue(exist);
 		},
