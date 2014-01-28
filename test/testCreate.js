@@ -2,24 +2,20 @@ var vows = require('vows');
 var assert = require('assert');
 var fs = require('fs');
 var exec = require('child_process').exec;
+var fileUtils = require('../lib/fileUtils');
 
 var testSuite = vows.describe('Create Project');
 
 testSuite.addBatch({
 	'create an empty project': {
 		topic: function() {
-			if (fs.existSync('./testMimosaSDKProj')){
-				fs.rmdirSync('./testMimosaSDKProj');
+			if (fs.existsSync('./testMimosaSDKProj')){
+				fileUtils.rmDir('./testMimosaSDKProj');
 			}
 			exec('node ./bin/mimosa.js create testMimosaSDKProj', this.callback);
 		},
 		
 		'test project existance': function(error, stdout, stderr) {
-			console.log('stdout:' + stdout);
-			console.log('stderr:' + stderr);
-			if (error !== null) {
-				console.log('exec error: ' + error);
-			}
 			var exist = fs.existsSync('./testMimosaSDKProj');
 			assert.isTrue(exist);
 		},
@@ -43,11 +39,11 @@ testSuite.addBatch({
 	
 	'create with override (-o) option': {
 		topic: function() {
-			if (!fs.existSync('./testMimosaSDKProj')){
+			if (!fs.existsSync('./testMimosaSDKProj')){
 				fs.mkdirSync('./testMimosaSDKProj');
 			}
 			
-			if (!fs.existSync('./testMimosaSDKProj/uselessFolder')){
+			if (!fs.existsSync('./testMimosaSDKProj/uselessFolder')){
 				fs.mkdirSync('./testMimosaSDKProj/uselessFolder');
 			}
 			
